@@ -1,1 +1,111 @@
-echo "hi";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+  body {
+  margin: 0px; padding: 0px;
+  background: #ebf4f4;
+  font-family: 'Helvetica';
+  h2 {
+    text-align: center;
+    font-weight: 400;
+    color: rgb(55, 55, 55);
+  }
+  p {
+    text-align: center;
+    font-weight: 100;
+    margin-top: -15px;
+    color: rgb(85, 85, 85);
+  }
+}
+
+.container {
+  width: auto; height: auto;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.icon {
+  display: inline-block;
+  cursor: pointer;
+  width: 130px; height: 130px;
+  background-color: #f5f5f5;
+  &:nth-child(2){
+    i {color: #ff0000;}
+    &:hover {
+      background-color: #ff0000;
+    }
+  }
+  &:nth-child(1){
+    i {color: #1dcaff;}
+    &:hover {
+      background-color: #1dcaff;
+    }
+  }
+    &:nth-child(2){
+    i {
+      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+      }
+    &:hover {
+      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      i {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #fff;
+      }
+    }
+  }
+  box-shadow: 0 3px 9px rgba(0,0,0,0.12), 0 -1px 8px rgba(0,0,0,0.08);
+  margin: 0px 12px;
+  transition: 0.7s;
+  i {
+    position: relative;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 55px;
+    color: #3B5998;
+    transition: .7s;
+  }
+  &:hover {
+    transition: .7s;
+    background-color: #3B5998;
+  	-webkit-animation: shadow-pop-tr 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: shadow-pop-tr 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    i{color: #fff; transition: .7s;}
+  }
+}
+
+@keyframes shadow-pop-tr {
+  0% {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -webkit-transform: translateX(-6px) translateY(6px);
+            transform: translateX(-6px) translateY(6px);
+  }
+}
+/* mrtě dobrý */
+  </style>
+</head>
+<body>
+    <div class="container">
+  <div class="icon"><a href="https://twitter.com/doguazadd/">
+     <i class="fa fa-twitter"></i></a>
+  </div>
+  <div class="icon"> <a href="https://instagram.com/doguazadd">
+    <i class="fa fa-instagram"></i></a>
+  </div>
+  </div>
+</div>
+</body>
+</html>
+
+
