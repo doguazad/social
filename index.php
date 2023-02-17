@@ -135,6 +135,10 @@
   </div>
   <div class="icon"> <a href="https://instagram.com/doguazadd">
     <i class="fa fa-instagram"></i></a>
+	  <?php  
+ 
+echo "test";
+?>
   </div>
   </div>
 </div>
