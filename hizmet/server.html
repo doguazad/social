@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <style>
+      h1{
+        font-family: 'Righteous', cursive;
+      }
+      strong{
+        color:black;
+        font-size: 19px;
+        font-family: 'Oswald', sans-serif;
+      }
+    </style>
+    <title>Tarayıcı Bilgilerini</title>
+  </head>
+  <body>
+    <h1>Tarayıcı Bilgileriniz: </h1>
+    <p><strong>Cihaz Bilgileri:</strong> <span id="userAgent"></span></p>
+    <p><strong>Sunucu Adres :</strong> <span id="appName"></span></p>
+    <p><strong>Tarayıcı:</strong> <span id="appCodeName"></span></p>
+    <p><strong>Sunucu Detay:</strong> <span id="appVersion"></span></p>
+    <p><strong>Cihaz Yazılımı:</strong> <span id="platform"></span></p>
+    <p><strong>Language:</strong> <span id="language"></span></p>
+    <h2> Cihaz Eklentileri: </h2>
+    <ul id="plugins"></ul>
+    
+    <script>
+      var browserInfo = {
+        userAgent: navigator.userAgent,
+        appName: navigator.appName,
+        appCodeName: navigator.appCodeName,
+        appVersion: navigator.appVersion,
+        platform: navigator.platform,
+        language: navigator.language,
+        plugins: []
+      };
+      
+      for (var i = 0; i < navigator.plugins.length; i++) {
+        var plugin = navigator.plugins[i];
+        var pluginInfo = {
+          name: plugin.name,
+          description: plugin.description,
+          filename: plugin.filename
+        };
+        browserInfo.plugins.push(pluginInfo);
+      }
+      
+      document.getElementById("userAgent").textContent = browserInfo.userAgent;
+      document.getElementById("appName").textContent = browserInfo.appName;
+      document.getElementById("appCodeName").textContent = browserInfo.appCodeName;
+      document.getElementById("appVersion").textContent = browserInfo.appVersion;
+      document.getElementById("platform").textContent = browserInfo.platform;
+      document.getElementById("language").textContent = browserInfo.language;
+      
+      var pluginsList = document.getElementById("plugins");
+      for (var i = 0; i < browserInfo.plugins.length; i++) {
+        var plugin = browserInfo.plugins[i];
+        var listItem = document.createElement("li");
+        listItem.innerHTML = "<strong>" + plugin.name + "</strong> - " + plugin.description + " (" + plugin.filename + ")";
+        pluginsList.appendChild(listItem);
+      }
+    </script>
+  </body>
+</html>
